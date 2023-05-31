@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from time import sleep
 
 urlglobal = "https://www.kabum.com.br/produto/373931/notebook-gamer-lenovo-gaming-3i-intel-core-i5-11300h-geforce-gtx-1650-8gb-ram-ssd-512gb-15-6-full-hd-windows-11-preto-82mg0009br"
-last_price = 5000
+last_price = None
 interval = 3
 
 #configs do telegram bot
