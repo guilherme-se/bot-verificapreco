@@ -9,8 +9,8 @@ last_price = None
 interval = 3
 
 #configs do telegram bot
-token = "seutoken"
-chat_id = seuchatid
+token = "6022970657:AAFvyQeuO-a-EPgruAaES1aeLwaWUk4m0U"
+chat_id = 158556584
 
 def send_message(price):
     global last_price, urlglobal, token, chat_id
@@ -26,16 +26,14 @@ def send_message(price):
         print(f"Erro ao enviar notificação. Código de status: {response.status_code}")
 
 def routine():
-    global last_price
+    global last_price, urlglobal
     while True:
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0"
         }
 
-        url = "https://www.kabum.com.br/produto/373931/notebook-gamer-lenovo-gaming-3i-intel-core-i5-11300h-geforce-gtx-1650-8gb-ram-ssd-512gb-15-6-full-hd-windows-11-preto-82mg0009br"
-
         try:
-            response = requests.get(url, headers=headers)
+            response = requests.get(urlglobal, headers=headers)
             response.raise_for_status()
         except requests.exceptions.RequestException as e:
             print(f"Erro ao fazer a requisição HTTP: {e}")
